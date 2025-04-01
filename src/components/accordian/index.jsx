@@ -8,9 +8,10 @@ export default function Accordian() {
     const [selected, setSelected] = useState(null);
 
     function handleSingleSelection(getCurrentId) {
-        
+        setSelected(getCurrentId === selected ? null : getCurrentId);
     }
 
+    console.log(selected);
     return (
         <div className="wrapper">
             <div className="accordian">
@@ -21,6 +22,11 @@ export default function Accordian() {
                                 <h3>{dataItem.username}</h3>
                                 <span>+</span>
                             </div>
+                            {
+                                selected === dataItem.id ? 
+                                <div className="content">{dataItem.status}</div>
+                                : null
+                            }
                         </div>
                     ))
                 ) : (
