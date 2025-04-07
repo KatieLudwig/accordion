@@ -15,3 +15,16 @@
     margin-bottom: 10px;
     padding: 10px 20px;
 }
+
+.title {
+    color: #ffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.content {
+    color: #ffff;
+    height: auto;
+}
