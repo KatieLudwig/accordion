@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill} from 'react-icons/bs';
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
 
 export default function ImageSlider({ url, limit = 10, page = 5 }) {
-    
+
     const [images, setImages] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [errorMsg, setErrorMsg] = useState(null);
     const [loading, setLoading] = useState(false);
-    
+
     async function fetchImages(getUrl) {
         try {
             setLoading(true);
@@ -22,7 +22,7 @@ export default function ImageSlider({ url, limit = 10, page = 5 }) {
                 setLoading(false);
             }
 
-        } catch(e) {
+        } catch (e) {
             setErrorMsg(e.message);
             setLoading(false);
         }
@@ -31,7 +31,7 @@ export default function ImageSlider({ url, limit = 10, page = 5 }) {
     useEffect(() => {
         if (url !== '') fetchImages(url)
     }, [url]);
-    
+
     if (loading) {
         return <div>Loading data! Please wait...</div>
     }
@@ -43,8 +43,8 @@ export default function ImageSlider({ url, limit = 10, page = 5 }) {
     return <div className="container">
         <BsArrowLeftCircleFill className='arrow arrow-left' />
         {
-            images && images.length ?
-                images.map(imageItem => {
+            images && images.length
+                ? images.map((imageItem) => {
                     <img
                         key={imageItem.id}
                         alt={imageItem.download_url}
@@ -54,5 +54,16 @@ export default function ImageSlider({ url, limit = 10, page = 5 }) {
                 })
                 : null
         }
+        <BsArrowRightCircleFill className='arrow arrow-right' />
+        <span className='circle-indicators'>
+            {
+                images && images.length ?
+                    images.map((_, index) => <button
+                        key={index}
+                        className='current-indictor'
+                    ></button>)
+                    : null
+            }
+        </span>
     </div>;
 }
