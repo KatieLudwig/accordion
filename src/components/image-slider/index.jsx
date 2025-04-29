@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill} from 'react-icons/bs';
 
-export default function ImageSlider({ url, limit }) {
+export default function ImageSlider({ url, limit = 10, page = 5 }) {
     
-    const [imgages, setImages] = useState([]);
+    const [images, setImages] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [errorMsg, setErrorMsg] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -11,7 +12,9 @@ export default function ImageSlider({ url, limit }) {
         try {
             setLoading(true);
 
-            const response = await fetch(getUrl);
+            const response = await fetch(`${getUrl}
+                ?page=${page}
+                &limit=${limit}`);
             const data = await response.json();
 
             if (data) {
@@ -26,8 +29,30 @@ export default function ImageSlider({ url, limit }) {
     }
 
     useEffect(() => {
-        if(url !== '') fetchImages(url)
-    },[url])
+        if (url !== '') fetchImages(url)
+    }, [url]);
+    
+    if (loading) {
+        return <div>Loading data! Please wait...</div>
+    }
 
-    return <div className="container"></div>;
+    if (errorMsg !== null) {
+        return <div>Error occured</div>
+    }
+
+    return <div className="container">
+        <BsArrowLeftCircleFill className='arrow arrow-left' />
+        {
+            images && images.length ?
+                images.map(imageItem => {
+                    <img
+                        key={imageItem.id}
+                        alt={imageItem.download_url}
+                        src={imageItem.download_url}
+                        className='current-image'
+                    />
+                })
+                : null
+        }
+    </div>;
 }
