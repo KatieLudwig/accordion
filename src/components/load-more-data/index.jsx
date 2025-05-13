@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
 
 export default function LoadMoreData() {
@@ -5,5 +6,12 @@ export default function LoadMoreData() {
     const [products, setProducts] = useState([]);
     const [count, setCount] = useState(0);
 
+    async function fetchProducts() {
+        
+    }
+    useEffect(() => {
+        fetchProducts();
+    }, [])
+    
     return <div className='container'></div>
 }
