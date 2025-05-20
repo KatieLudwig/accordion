@@ -35,6 +35,13 @@ export default function LoadMoreData() {
     }
 
     return <div className='container'>
-        
+        <div>
+            {
+                products && products.length ?
+                    products.map(item=> <div>
+                        </div>)
+                        :null
+            }
+        </div>
     </div>
 }
