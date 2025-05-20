@@ -38,7 +38,9 @@ export default function LoadMoreData() {
         <div>
             {
                 products && products.length ?
-                    products.map(item=> <div>
+                    products.map(item => <div className='product' key={item.id}>
+                        <img src={item.thumbnail} alt={item.title} />
+                        <p>{item.title}</p>
                         </div>)
                         :null
             }
