@@ -1,4 +1,4 @@
-export const sideMunu = [
+export const menus = [
     {
         label: "Home",
         to: "/",
@@ -39,3 +39,5 @@ export const sideMunu = [
         ],
     },
 ]
+
+export default menus;
