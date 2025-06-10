@@ -8,9 +8,15 @@ export const menus = [
         to: "/profile",
         children: [
             {
-                label: "Location",
-                to: "location",
-            },
+                label: "Details",
+                to: 'details',
+                children: [
+                    {
+                        label: "Location",
+                        to: "location",
+                    },
+                ]
+            }
         ],
     },
 
