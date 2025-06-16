@@ -15,7 +15,7 @@ export default function MenuItem({ item }) {
     }
 
 
-    return <li>
+    return <li className="menu-item">
         <div style={{ display: 'flex', gap: '20px' }}>
             <p>{item.label}</p>
             {
