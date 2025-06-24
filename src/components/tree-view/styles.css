@@ -8,6 +8,7 @@
     align-items: center;
     gap:20px;
     cursor: pointer;
+    color: #fff;
 }
 
 .menu-list-constainer{
