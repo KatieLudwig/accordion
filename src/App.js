@@ -29,8 +29,10 @@ function App() {
       {/* Load more products component
       <LoadMoreData/> */}
 
-      {/* Tree View Component*/}
-      <TreeView menus={menus} />
+      {/* Tree View Component
+      <TreeView menus={menus} /> */}
+
+      
     </div>
   );
 }
