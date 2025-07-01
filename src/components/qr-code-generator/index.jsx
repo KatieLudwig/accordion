@@ -21,7 +21,7 @@ export default function QRCodeGenerator() {
         <div>
             <QRCode
                 id="qr-code-value"
-                value={qrCode} size={400}
+                value={qrCode} size={400} bgColor='#fff'
             />
         </div>
     </div>
