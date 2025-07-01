@@ -7,7 +7,8 @@ export default function QRCodeGenerator() {
     const [input, setInput] = useState('');
 
     function handleGenerateQrCode() {
-        setQrCode(input)
+        setQrCode(input);
+        setInput('')
     }
 
 
@@ -15,7 +16,11 @@ export default function QRCodeGenerator() {
     return <div>
         <h1>QR Code Generator</h1>
         <div>
-            <input onChange={(e) => setInput(e.target.value)} type="text" name="qr-code" placeholder="Enter your value here"/>
+            <input onChange={(e) => setInput(e.target.value)}
+                type="text"
+                name="qr-code"
+                value={input}
+                placeholder="Enter your value here" />
             <button disbled={input && input.trim() !== '' ? false : true} onClick={handleGenerateQrCode}>Generate</button>
         </div>
         <div>
