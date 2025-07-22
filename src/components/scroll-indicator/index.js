@@ -32,7 +32,7 @@ export default function ScrollIndicator({ url }) {
 
     function handleScrollPercentage() {
         console.log(document.body.scrollTop, document.documentElement.scrollTop, document.documentElement.scrollHeight, document.documentElement.clientHeight);
-        
+
         const howMuchScrolled = document.body.scrollTop || document.documentElement.scrollTop;
 
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -45,18 +45,23 @@ export default function ScrollIndicator({ url }) {
         window.addEventListener('scroll', handleScrollPercentage)
 
         return () => {
-        window.removeEventListener('scroll', () => { })
-    }
+            window.removeEventListener('scroll', () => { })
+        }
     }, [])
     console.log(data, scrollPercentage);
 
     return <div>
-        <h1>Custom Scroll Indicator</h1>
+        <div className='top-container'>
+            <h1>Custom Scroll Indicator</h1>
+            <div className='scroll-progress-tracking-container'>
+                <div className='current-proggress-bar' style={{ width: `${scrollPercentage}%` }}></div>
+            </div>
+        </div>
         <div className='data-container'>
             {
                 data && data.length > 0 ?
-                data.map(dataItem => <p>{dataItem.title}</p>)
-                :null
+                    data.map(dataItem => <p>{dataItem.title}</p>)
+                    : null
             }
         </div>
     </div>
