@@ -31,7 +31,13 @@ export default function ScrollIndicator({ url }) {
     }, [url]);
 
     function handleScrollPercentage() {
-        console.log(document.body.scrollTop, document.documentElement.scrollTop, document.documentElement.scrollHeight, document.documentElement.scroll)
+        console.log(document.body.scrollTop, document.documentElement.scrollTop, document.documentElement.scrollHeight, document.documentElement.clientHeight);
+        
+        const howMuchScrolled = document.body.scrollTop || document.documentElement.scrollTop;
+
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+        setScrollPercentage((howMuchScrolled / height) * 100)
     }
 
 
@@ -42,7 +48,7 @@ export default function ScrollIndicator({ url }) {
         window.removeEventListener('scroll', () => { })
     }
     }, [])
-    console.log(data, loading);
+    console.log(data, scrollPercentage);
 
     return <div>
         <h1>Custom Scroll Indicator</h1>
