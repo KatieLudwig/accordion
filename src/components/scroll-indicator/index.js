@@ -21,7 +21,6 @@ export default function ScrollIndicator({ url }) {
             }
 
         } catch (e) {
-            console.log(e);
             setErrorMessage(e.message)
         }
     }
@@ -32,7 +31,6 @@ export default function ScrollIndicator({ url }) {
     }, [url]);
 
     function handleScrollPercentage() {
-        console.log(document.body.scrollTop, document.documentElement.scrollTop, document.documentElement.scrollHeight, document.documentElement.clientHeight);
 
         const howMuchScrolled = document.body.scrollTop || document.documentElement.scrollTop;
 
@@ -49,29 +47,31 @@ export default function ScrollIndicator({ url }) {
             window.removeEventListener('scroll', () => { })
         }
     }, [])
-    console.log(data, scrollPercentage);
 
     if (errorMessage) {
-        return<div>Error ! (errorMessage);</div>
+        return<div>Error ! {errorMessage};</div>
     }
 
     if (loading) {
         return <div>Loading data! Please wait.</div>
     }
 
-    return <div>
+    return (
+        <div>
         <div className='top-container'>
             <h1>Custom Scroll Indicator</h1>
             <div className='scroll-progress-tracking-container'>
-                <div className='current-proggress-bar' style={{ width: `${scrollPercentage}%` }}></div>
+                <div
+                    className='current-proggress-bar'
+                    style={{ width: `${scrollPercentage}%` }}
+                ></div>
             </div>
         </div>
         <div className='data-container'>
-            {
-                data && data.length > 0 ?
-                    data.map(dataItem => <p>{dataItem.title}</p>)
-                    : null
-            }
+            {data && data.length > 0
+                ? data.map((dataItem) => <p>{dataItem.title}</p>)
+                : null}
         </div>
-    </div>
+        </div>
+    )
 }

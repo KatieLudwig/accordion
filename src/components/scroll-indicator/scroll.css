@@ -5,6 +5,7 @@
     width: 100%;
     text-align: center;
     background-color: #075b0a;
+    color: #fff;
 }
 
 .scroll-progress-tracking-container{
@@ -13,8 +14,12 @@
     background-color: #aaf900;
 }
 
-.current-progress-bar{
+.current-proggress-bar{
     height: 10px;
     background-color: #8b02b5;
     width: 0%;
+}
+
+.data-container{
+    margin-top: 100px;
 }
