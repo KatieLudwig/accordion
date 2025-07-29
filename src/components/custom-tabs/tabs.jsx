@@ -5,10 +5,15 @@ export default function Tabs({ tabsContent, onChange }) {
 
     const [currentTabIndex, setCurrentTabIndex] = useState(0);
 
+    function handleOnClick(getCurrentIndex) {
+        setCurrentTabIndex(getCurrentIndex)
+        onChange(getCurrentIndex)
+    }
+
     return <div className="wrapper">
         <div className="heading">
-            {tabsContent.map(tabItem => (
-                <div key={tabItem.lael}>
+            {tabsContent.map((tabItem, index) => (
+                <div onClick={()=> handleOnClick(index) } key={tabItem.lael}>
                     <span className="label">{tabItem.label}</span>
                 </div>
             ))}
