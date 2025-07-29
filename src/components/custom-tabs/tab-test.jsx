@@ -6,7 +6,7 @@ function RandomComponent(){
 }
 
 
-export default function TabTes() {
+export default function TabTest() {
 
     const tabs = [
         {
