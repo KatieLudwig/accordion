@@ -4,7 +4,7 @@
 
 export default function Modal({ id, header, body, footer }) {
     return <div id={id || 'Modal'} className="modal">
-        <div className="content">
+        <div className="modal-content">
             <div className="header">
                 <span className="close-modal-icon">%times;</span>
                 <h2>{header ? header : 'Header'}</h2>
