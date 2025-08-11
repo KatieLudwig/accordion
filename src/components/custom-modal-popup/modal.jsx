@@ -2,7 +2,7 @@
 
 
 
-export default function Modal({ id, header, body, footer, onClose}) {
+export default function Modal({ id, header, body, footer, onClose }) {
     return <div id={id || 'Modal'} className="modal">
         <div className="modal-content">
             <div className="header">
