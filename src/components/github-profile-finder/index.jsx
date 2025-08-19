@@ -21,7 +21,7 @@ export default function GithubProfileFinder() {
     }
 
     function handleSubmit() { 
-        
+        fetchGithubUserData()
     }
     
     useEffect(() => {
