@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 export default function GithubProfileFinder() {
     const [userName, setUsername] = useState('sangammukherjee');
     const [userData, setUserData] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     async function fetchGithubUserData() {
         setLoading(true)
