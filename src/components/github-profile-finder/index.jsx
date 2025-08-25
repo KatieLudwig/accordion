@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import User from './user';
+import './styles.css';
 
 export default function GithubProfileFinder() {
-    const [userName, setUsername] = useState('KatieLudwig');
+    const [userName, setUserName] = useState('KatieLudwig');
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -14,7 +15,7 @@ export default function GithubProfileFinder() {
         if (data) {
             setUserData(data)
             setLoading(false)
-            setUsername('')
+            setUserName('')
         }
     }
 
@@ -38,7 +39,7 @@ export default function GithubProfileFinder() {
                     type="text"
                     placeholder="Search Github Username..."
                     value={userName}
-                    onChange={(event) => setUsername(event.target.vaule)}
+                    onChange={(event) => setUserName(event.target.vaule)}
                 />
                 <button onClick={handleSubmit}>Search</button>
             </div>
