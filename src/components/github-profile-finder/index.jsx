@@ -5,7 +5,7 @@ import './styles.css';
 export default function GithubProfileFinder() {
     const [userName, setUserName] = useState('KatieLudwig');
     const [userData, setUserData] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     async function fetchGithubUserData() {
         setLoading(true)
@@ -24,8 +24,9 @@ export default function GithubProfileFinder() {
     }
     
     useEffect(() => {
-        fetchGithubUserData()
-    }, []);
+            fetchGithubUserData()
+        }
+    , []);
 
     if (loading) {
         return <h1>Loading data ! Please Wait</h1>
@@ -39,7 +40,7 @@ export default function GithubProfileFinder() {
                     type="text"
                     placeholder="Search Github Username..."
                     value={userName}
-                    onChange={(event) => setUserName(event.target.vaule)}
+                    onChange={(event) => setUserName(event.target.value)}
                 />
                 <button onClick={handleSubmit}>Search</button>
             </div>
