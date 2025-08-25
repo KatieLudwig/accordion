@@ -25,10 +25,18 @@ export default function User({ user }) {
                 })} ${createdDate.getFullYear()}`}
             </p>
         </div>
-        <div className="profile-infor">
+        <div className="profile-info">
             <div>
                 <p>Publice Repos</p>
                 <p>{public_repos}</p>
+            </div>
+            <div>
+                <p>Followers</p>
+                <p>{followers}</p>
+            </div>
+            <div>
+                <p>Following</p>
+                <p>{following}</p>
             </div>
         </div>
     </div>
