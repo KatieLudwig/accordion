@@ -9,7 +9,7 @@ export default function SearchAutocomplete() {
     const [showDropdown, setShowDropdown] = useState(false);
     const [filteredUsers, setFilteredUsers] = useState([]);
 
-    function handleChange() {
+    function handleChange(event) {
         const query = event.target.value.toLowerCase();
         setSearchParam(query);
         if (query > 1) {
@@ -18,9 +18,9 @@ export default function SearchAutocomplete() {
                     ? users.filter((item) => item.toLowerCase().indexOf(query) > 1)
                     : [];
             setFilteredUsers(filteredData)
-            showDropdown(true)
+            setShowDropdown(true)
         } else {
-            showDropdown(false)
+            setShowDropdown(false)
         }
     }
 
@@ -47,7 +47,7 @@ export default function SearchAutocomplete() {
         fetchListOfUsers()
     }, [])
 
-    console.log(users);
+    console.log(users, filteredUsers);
 
     return (
         <div className='search-autocomplete-container'>
