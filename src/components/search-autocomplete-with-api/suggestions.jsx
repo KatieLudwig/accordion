@@ -1,9 +1,14 @@
 export default function Suggestions({ data, handleClick }) {
-    return <ul>
-        {
-            data && data.length ?
-                data.map((item, index) => <li onClikc={handleClick} key={index}>{item}</li>)
+    return (
+        <ul>
+            {data && data.length
+                ? data.map((item, index) => (
+                    <li onClick={handleClick} key={index}>
+                        {item}
+                    </li>
+                ))
                 : null
-        }
-    </ul>
+            }
+        </ul>
+    );
 }
