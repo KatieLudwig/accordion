@@ -58,12 +58,12 @@ export default function SearchAutocomplete() {
                 <input
                 value={searchParam}
                 name='search-users'
-                placeholder='ssearch Users here...'
+                placeholder='Search Users here...'
                 onChange={handleChange}
             />
             )}
             {
-                showDropdown && <Suggestions data={filteredUsers} />
+                showDropdown && <Suggestions handleClick={handleClick} data={filteredUsers} />
             }
         </div>
     );
