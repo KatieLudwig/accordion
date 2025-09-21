@@ -1,9 +1,9 @@
 
 const dummyApiResponse = {
-    showLightAndDarkMode: false,
+    showLightAndDarkMode: true,
     showTicTacToeBoard: true,
     showRandomColorGenerator: true,
-    showAccoordin: false,
+    showAccoordin: true,
     showTreeView: true,
 }
 
