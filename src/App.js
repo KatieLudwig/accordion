@@ -67,7 +67,6 @@ function App() {
 
       {/* Feature Flag Implementation */}
       <FeatureFlagGlobalState>
-        <FeatureFlags />
       </FeatureFlagGlobalState>
     </div>
   );
