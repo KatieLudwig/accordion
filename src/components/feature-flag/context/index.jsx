@@ -9,9 +9,11 @@ export default function FeatureFlagGlobalState({ children }) {
 
     async function fetchFeatureFlags() {
         try {
+            setLoading(true);
             //original service call
             const response = await featureFlagsDataServiceCall();
             setEnabledFlags(response);
+            setLoading(false);
         } catch (error) {
             console.log(error);
             throw new Error(error);
