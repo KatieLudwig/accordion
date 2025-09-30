@@ -42,6 +42,9 @@ export default function FeatureFlags() {
     function checkEnbledFlags(getCurrentKey) {
         return enabledFlags[getCurrentKey];
     }
+
+    if (loading) return <h1>Loading data! Please wait.</h1>;
+    
     return <div>
         <h1>Feature Flags</h1>
     </div>
