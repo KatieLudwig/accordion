@@ -15,29 +15,33 @@ export default function FeatureFlags() {
     const componentsToRender = [
         {
             key: 'showLightAndDarkMode',
-            component : <LightDarkMode/>
+            component: <LightDarkMode />
         },
         {
             key: 'showTicTactoeBoard',
-            component : <TicTacToe/>
+            component: <TicTacToe />
         },
         {
             key: 'showRandomColorGenerator',
-            component : <RandomColor/>
+            component: <RandomColor />
         },
         {
             key: 'showAccoordin',
-            component : <Accordian/>
+            component: <Accordian />
         },
         {
             key: 'showTreeView',
-            component : <TreeView/>
+            component: <TreeView />
         },
         {
             key: 'showTabs',
-            component: <TabTest/>
+            component: <TabTest />
         }
-    ]
+    ];
+
+    function checkEnbledFlags(getCurrentKey) {
+        return enabledFlags[getCurrentKey];
+    }
     return <div>
         <h1>Feature Flags</h1>
     </div>
