@@ -44,8 +44,11 @@ export default function FeatureFlags() {
     }
 
     if (loading) return <h1>Loading data! Please wait.</h1>;
-    
+
     return <div>
         <h1>Feature Flags</h1>
+        {componentsToRender.map((componentItem) => 
+            checkEnbledFlags(componentItem.key) ? componentItem : null
+        )}
     </div>
 }
