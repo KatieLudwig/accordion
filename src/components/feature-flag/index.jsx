@@ -9,8 +9,9 @@ import menus from "../tree-view/data";
 import TabTest from "../custom-tabs/tab-test";
 
 export default function FeatureFlags() {
+    const { loading, enabledFlags } = useContext(FeatureFlagsContext);
 
-    const {} = useContext(FeatureFlagsContext)
+    
     const componentsToRender = [
         {
             key: 'showLightAndDarkMode',
