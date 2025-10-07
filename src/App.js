@@ -65,10 +65,10 @@ function App() {
       {/* tic tac toe
       <TicTacToe /> */}
 
-      {/* Feature Flag Implementation */}
+      {/* Feature Flag Implementation
       <FeatureFlgGlobalState>
       <FeatureFlags />
-      </FeatureFlgGlobalState>
+      </FeatureFlgGlobalState> */}
     </div>
   );
 }

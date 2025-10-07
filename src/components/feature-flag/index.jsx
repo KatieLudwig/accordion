@@ -1,55 +1,55 @@
-import { useContext } from 'react';
-import Accordian from '../accordian';
-import LightDarkMode from "../light-dark-mode";
-import RandomColor from "../random-color";
-import TicTacToe from "../tic-tac-toe";
-import TreeView from "../tree-view";
-import { FeatureFlagsContext } from "./context";
-import menus from "../tree-view/data";
-import TabTest from "../custom-tabs/tab-test";
+// import { useContext } from 'react';
+// import Accordian from '../accordian';
+// import LightDarkMode from "../light-dark-mode";
+// import RandomColor from "../random-color";
+// import TicTacToe from "../tic-tac-toe";
+// import TreeView from "../tree-view";
+// import { FeatureFlagsContext } from "./context";
+// import menus from "../tree-view/data";
+// import TabTest from "../custom-tabs/tab-test";
 
-export default function FeatureFlags() {
+// export default function FeatureFlags() {
     
-    const { loading, enabledFlags } = useContext(FeatureFlagsContext);
+//     const { loading, enabledFlags } = useContext(FeatureFlagsContext);
 
     
-    const componentsToRender = [
-        {
-            key: 'showLightAndDarkMode',
-            component: <LightDarkMode />
-        },
-        {
-            key: 'showTicTacToeBoard',
-            component: <TicTacToe />
-        },
-        {
-            key: 'showRandomColorGenerator',
-            component: <RandomColor />
-        },
-        {
-            key: 'showAccoordin',
-            component: <Accordian />
-        },
-        {
-            key: 'showTreeView',
-            component: <TreeView />
-        },
-        {
-            key: 'showTabs',
-            component: <TabTest />
-        }
-    ];
+//     const componentsToRender = [
+//         {
+//             key: 'showLightAndDarkMode',
+//             component: <LightDarkMode />
+//         },
+//         {
+//             key: 'showTicTacToeBoard',
+//             component: <TicTacToe />
+//         },
+//         {
+//             key: 'showRandomColorGenerator',
+//             component: <RandomColor />
+//         },
+//         {
+//             key: 'showAccoordin',
+//             component: <Accordian />
+//         },
+//         {
+//             key: 'showTreeView',
+//             component: <TreeView />
+//         },
+//         {
+//             key: 'showTabs',
+//             component: <TabTest />
+//         }
+//     ];
 
-    function checkEnbledFlags(getCurrentKey) {
-        return enabledFlags[getCurrentKey];
-    }
+//     function checkEnbledFlags(getCurrentKey) {
+//         return enabledFlags[getCurrentKey];
+//     }
 
-    if(loading) return <h1>Loading data ! Please wait.</h1>;
+//     if(loading) return <h1>Loading data ! Please wait.</h1>;
 
-    return <div>
-        <h1>Feature Flags</h1>
-        {componentsToRender.map((componentItem) => 
-            checkEnbledFlags(componentItem.key) ? componentItem : null
-        )}
-    </div>
-}
+//     return <div>
+//         <h1>Feature Flags</h1>
+//         {componentsToRender.map((componentItem) => 
+//             checkEnbledFlags(componentItem.key) ? componentItem : null
+//         )}
+//     </div>
+// }
