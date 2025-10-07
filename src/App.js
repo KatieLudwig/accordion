@@ -16,6 +16,8 @@ import SearchAutocomplete from './components/search-autocomplete-with-api';
 import TicTacToe from './components/tic-tac-toe';
 import FeatureFlagGlobalState from './components/feature-flag/context';
 import FeatureFlags from './components/feature-flag';
+import UseFetchHookTest from './components/use-fetch/test';
+
 function App() {
   return (
     <div className="App">
@@ -69,6 +71,9 @@ function App() {
       <FeatureFlgGlobalState>
       <FeatureFlags />
       </FeatureFlgGlobalState> */}
+
+      {/* useFetch - Custom Hook */}
+      <UseFetchHookTest/>
     </div>
   );
 }

@@ -11,7 +11,7 @@ export default function useFetch(url, options = {}) {
         setPending(true)
         try {
             const response = await fetch(url, { ...options });
-            if (!response.ok) throw new Error(resposne.statusText);
+            if (!response.ok) throw new Error(response.statusText);
 
             const result = await response.json();
             setData(result);
@@ -24,9 +24,8 @@ export default function useFetch(url, options = {}) {
     }
 
     useEffect(() => {
-
-        fecthData()
+        fetchData();
     }, [url]);
 
-    reutrn[data, error, pending];
+    return { data, error, pending };
 }
