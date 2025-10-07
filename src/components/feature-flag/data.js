@@ -3,8 +3,9 @@ const dummyApiResponse = {
     showLightAndDarkMode: true,
     showTicTacToeBoard: true,
     showRandomColorGenerator: true,
-    showAccoordin: true,
+    showAccoordian: true,
     showTreeView: true,
+    showTabs : true
 }
 
 function featureFlagsDataServiceCall() {

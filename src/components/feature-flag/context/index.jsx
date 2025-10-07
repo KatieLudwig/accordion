@@ -16,15 +16,16 @@ export default function FeatureFlagGlobalState({ children }) {
             setLoading(false);
         } catch (error) {
             console.log(error);
+            setLoading(false)
             throw new Error(error);
         }
     }
 
     useEffect(() => {
         fetchFeatureFlags();
-    }, [])
+    }, []);
 
-    return <FeatureFlagsContext.Provider value={{ enabledFlags }}>
+    return <FeatureFlagsContext.Provider value={{ loading, enabledFlags }}>
         {children}
     </FeatureFlagsContext.Provider>
 }
