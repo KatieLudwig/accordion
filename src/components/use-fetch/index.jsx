@@ -14,6 +14,9 @@ export default function useFetch(url, options = {}) {
             if (!response.ok) throw new Error(resposne.statusText);
 
             const result = await response.json();
+            setData(result);
+            setError(null);
+            setPending(false);
         } catch (e) {
             setError(`$(e). Some Error Occured`)
             setPending(false)
@@ -23,5 +26,7 @@ export default function useFetch(url, options = {}) {
     useEffect(() => {
 
         fecthData()
-    },[url])
+    }, [url]);
+
+    reutrn[data, error, pending];
 }
