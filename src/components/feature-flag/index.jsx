@@ -38,10 +38,20 @@ export default function FeatureFlags() {
 
     ]
 
+    function checkEnabledFlags(getCurrentKey) {
+        return enabledFlags[getCurrentKey]
+    }
+
     if(loading) return <h1>Loading data ! Please wait</h1>
     return (
         <div>
             <h1>Feature Flags</h1>
+            {
+                componentsToRender.map(componentItem =>
+                    checkEnabledFlags(componentItem.key)
+                    ? componentItem.component
+                    : null
+                )}
         </div>
     );
 }
