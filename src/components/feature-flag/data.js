@@ -6,6 +6,7 @@ const dummyApiResponse = {
     showRandomColorGenerator: true,
     showAccordian: true,
     showTreeView: true,
+    showTabs: true,
 };
 
 function featureFlagsDataServiceCall() {

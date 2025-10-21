@@ -6,6 +6,7 @@ import TicTacToe from '../tic-tac-toe';
 import TreeView from '../tree-view';
 import { FeatureFlagsContext } from './context';
 import menus from '../tree-view/data';
+import TabTest from '../custom-tabs/tab-test';
 
 export default function FeatureFlags() {
 
@@ -17,24 +18,24 @@ export default function FeatureFlags() {
             component: <LightAndDarkMode/>
         },
         {
-            key: 'showTicTacTowBoard',
+            key: 'showTicTacToeBoard',
             component: <TicTacToe/>
-
         },
         {
             key: 'showRandomColorGenerator',
             component: <RandomColor/>
-
         },
         {
             key: 'showAccordian',
             component: <Accordian/>
-
         },
         {
             key: 'showTreeView',
             component: <TreeView  menus={menus} />
-
+        },
+        {
+            key: 'showTabs',
+            component: <TabTest/>
         }
 
     ]
