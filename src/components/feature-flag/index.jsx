@@ -5,10 +5,11 @@ import RandomColor from '../random-color';
 import TicTacToe from '../tic-tac-toe';
 import TreeView from '../tree-view';
 import { FeatureFlagsContext } from './context';
+import menus from '../tree-view/data';
 
 export default function FeatureFlags() {
 
-    const {loading, enabledFlags } = useContext(FeatureFlagsContext);
+    const { loading, enabledFlags } = useContext(FeatureFlagsContext);
 
     const componentsToRender = [
         {
@@ -32,22 +33,21 @@ export default function FeatureFlags() {
         },
         {
             key: 'showTreeView',
-            component: <TreeView/>
+            component: <TreeView  menus={menus} />
 
         }
 
     ]
 
     function checkEnabledFlags(getCurrentKey) {
-        return enabledFlags[getCurrentKey]
+        return enabledFlags[getCurrentKey];
     }
 
-    if(loading) return <h1>Loading data ! Please wait</h1>
+    if (loading) return <h1>Loading data ! Please wait</h1>
     return (
         <div>
             <h1>Feature Flags</h1>
-            {
-                componentsToRender.map(componentItem =>
+            {componentsToRender.map((componentItem) =>
                     checkEnabledFlags(componentItem.key)
                     ? componentItem.component
                     : null
