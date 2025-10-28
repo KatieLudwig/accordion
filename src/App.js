@@ -67,10 +67,10 @@ function App() {
       {/* tic tac toe
       <TicTacToe /> */}
 
-      {/* Feature Flag Implementation */}
+      {/* Feature Flag Implementation
       <FeatureFlagGlobalState>
         <FeatureFlags />
-      </FeatureFlagGlobalState>
+      </FeatureFlagGlobalState> */}
 
       {/* useFetch - Custom Hook
       <UseFetchHookTest/> */}
