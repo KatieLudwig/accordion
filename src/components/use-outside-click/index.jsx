@@ -4,5 +4,12 @@ export default function useOutsideClick(ref, handler) {
     
     useEffect(() => {
 
-    }, [hanler,ref])
+        function listener(event) {
+            if (!ref.current || ref.current.contains(event.target)) {
+                return
+            }
+
+            handler(event)
+        }
+    }, [handler,ref])
 }
