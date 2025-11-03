@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
+import useOutsideClick from ".";
 
 export default function UseOnclickOutsideTest() {
-    const [showContent, setShowContent] = useState(false)
+    const [showContent, setShowContent] = useState(false);
     const ref = useRef();
     useOutsideClick(ref, () => setShowContent(false))
 
