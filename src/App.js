@@ -18,6 +18,7 @@ import FeatureFlagGlobalState from './components/feature-flag/context';
 import FeatureFlags from './components/feature-flag';
 import UseFetchHookTest from './components/use-fetch/test';
 import UseOnclickOutsideTest from './components/use-outside-click/test';
+import UseWindowResizeTest from './components/use-window-resize/test';
 
 function App() {
   return (
@@ -76,8 +77,11 @@ function App() {
       {/* useFetch - Custom Hook Test
       <UseFetchHookTest/> */}
 
-      {/* Use OnClick Outside Hook Test */}
-        <UseOnclickOutsideTest/>
+      {/* Use OnClick Outside Hook Test
+        <UseOnclickOutsideTest/> */}
+      
+      {/*Use window resize hook test */}
+      <UseWindowResizeTest/>
     </div>
   );
 }
