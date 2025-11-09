@@ -20,7 +20,7 @@ export default function ScrollToTopAndBottom() {
         <button>Scroll To Bottom</button>
         <ul>
             {data && data.products && data.products.length
-                ? data.map((item) => <li>{item.title}</li>)
+                ? data.products.map((item) => <li>{item.title}</li>)
                 : null
             }
         </ul>
