@@ -85,7 +85,7 @@ function App() {
       {/* <UseWindowResizeTest/> */}
 
       {/* Scroll to Top and Bottom*/}
-      <ScrollToTopAndBottom/>
+      {/* <ScrollToTopAndBottom/> */}
     </div>
   );
 }
