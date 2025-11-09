@@ -19,6 +19,7 @@ import FeatureFlags from './components/feature-flag';
 import UseFetchHookTest from './components/use-fetch/test';
 import UseOnclickOutsideTest from './components/use-outside-click/test';
 import UseWindowResizeTest from './components/use-window-resize/test';
+import ScrollToTopAndBottom from './components/scroll-to-top-and-bottom';
 
 function App() {
   return (
@@ -39,49 +40,52 @@ function App() {
         limit={'10'}
       /> */}
 
-      {/* Load more products component
-      <LoadMoreData/> */}
+      {/* Load more products component */}
+      {/* <LoadMoreData/> */}
 
-      {/* Tree View Component
-      <TreeView menus={menus} /> */}
+      {/* Tree View Component */}
+      {/* <TreeView menus={menus} /> */}
 
-      {/* QR Code generator
-      <QRCodeGenerator /> */}
+      {/* QR Code generator */}
+      {/* <QRCodeGenerator /> */}
 
-      {/*Light Dark Mode 
-      <LightDarkMode /> */}
+      {/* Light Dark Mode  */}
+      {/* <LightDarkMode /> */}
 
-      {/* Scroll inicatior component
-      <ScrollIndicator url={'https://dummyjson.com/products?limit=100'} /> */}
+      {/* Scroll inicatior component */}
+      {/* <ScrollIndicator url={'https://dummyjson.com/products?limit=100'} /> */}
       
-      {/* Tabs Component
-      <TabTest /> */}
+      {/* Tabs Component */}
+      {/* <TabTest /> */}
 
-      {/*Modal Popup 
-      <ModalTest /> */}
+      {/* Modal Popup  */}
+      {/* <ModalTest /> */}
 
-      {/* Github Profile Finder
-      <GithubProfileFinder /> */}
+      {/* Github Profile Finder */}
+      {/* <GithubProfileFinder /> */}
 
-      {/* search autocomplete
-      <SearchAutocomplete /> */}
+      {/* search autocomplete */}
+      {/* <SearchAutocomplete /> */}
 
-      {/* tic tac toe
-      <TicTacToe /> */}
+      {/* tic tac toe */}
+      {/* <TicTacToe /> */}
 
-      {/* Feature Flag Implementation
-      <FeatureFlagGlobalState>
+      {/* Feature Flag Implementation */}
+      {/* <FeatureFlagGlobalState>
         <FeatureFlags />
       </FeatureFlagGlobalState> */}
 
-      {/* useFetch - Custom Hook Test
-      <UseFetchHookTest/> */}
+      {/* useFetch - Custom Hook Test */}
+      {/* <UseFetchHookTest/> */}
 
-      {/* Use OnClick Outside Hook Test
-        <UseOnclickOutsideTest/> */}
+      {/* Use OnClick Outside Hook Test */}
+      {/* <UseOnclickOutsideTest/> */}
       
-      {/*Use window resize hook test */}
-      <UseWindowResizeTest/>
+      {/* Use window resize hook test */}
+      {/* <UseWindowResizeTest/> */}
+
+      {/* Scroll to Top and Bottom*/}
+      <ScrollToTopAndBottom/>
     </div>
   );
 }
