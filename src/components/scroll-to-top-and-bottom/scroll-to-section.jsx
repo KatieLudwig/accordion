@@ -2,6 +2,8 @@
 
 export default function ScrollToSection() {
 
+    const ref = 
+
     const data = [
         {
             label: 'First Card',
@@ -40,7 +42,7 @@ export default function ScrollToSection() {
             style: {
                 width: '100%',
                 height: '600px',
-                background: 'black'
+                background: 'orange'
             }
         },
     ]
