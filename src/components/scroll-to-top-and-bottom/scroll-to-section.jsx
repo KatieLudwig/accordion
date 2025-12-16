@@ -1,8 +1,8 @@
-
+import { useRef } from 'react';
 
 export default function ScrollToSection() {
 
-    const ref = 
+    const ref = useRef()
 
     const data = [
         {
@@ -45,13 +45,22 @@ export default function ScrollToSection() {
                 background: 'orange'
             }
         },
-    ]
+    ];
+
+    function handleScrollToSection() {
+        let pos = ref.current.getBoundingClientRect().top;
+
+        window.scrollTo({
+            top: pos,
+            behavior: 'smooth',
+        });
+    }
     
     return <div>
         <h1>Scroll to partical section</h1>
-        <button>Click to Scroll</button>
-        {data.map((dataItem) => (
-            <div style={dataItem.style}>
+        <button onClick={handleScrollToSection}>Click to Scroll</button>
+        {data.map((dataItem, index) => (
+            <div ref={index === 2 ? ref : null} style={dataItem.style}>
                 <h3>{dataItem.label}</h3>
             </div>
         ))}
